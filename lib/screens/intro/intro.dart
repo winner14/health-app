@@ -43,7 +43,7 @@ class Intro extends StatelessWidget {
                     // height: 260,
                     width: double.infinity,
                     decoration: const BoxDecoration(
-                      color: myFgColor,
+                      color: mySecondaryColor,
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                     ),
                     child: Padding(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_app/constants.dart';
 import 'package:health_app/screens/intro/intro.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Hospital App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: myPrimaryColor),
         useMaterial3: true,
       ),
       home: const MainPage(),

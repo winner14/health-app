@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:health_app/widgets/my_text.dart';
 
 const myPrimaryColor = Color(0xFF4DC38C);
-const mySecondaryColor = Color(0xFFEBEEEB);
-const myFgColor = Color(0xFFFFFFFF);
+const mySecondaryColor = Color(0xFFFFFFFF);
+const myFgColor = Color(0xFFEBEEEB);
 
 //next screen
 void nextScreen(context, screen) {
