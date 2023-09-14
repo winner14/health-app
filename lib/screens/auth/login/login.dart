@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_app/constants.dart';
+import 'package:health_app/screens/auth/register/register.dart';
 import 'package:health_app/widgets/my_button.dart';
 import 'package:health_app/widgets/my_text.dart';
 
@@ -18,7 +19,7 @@ class _LoginState extends State<Login> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.transparent,
+        backgroundColor: mySecondaryColor,
         elevation: 0,
         leading: IconButton(
           onPressed: () {
@@ -101,6 +102,8 @@ class _LoginState extends State<Login> {
                                                   Radius.circular(30)),
                                               borderSide: BorderSide.none,
                                             ),
+                                            labelText: 'Email',
+                                            hintText: 'nick@gmail.com',
                                           ),
                                         ),
                                       ),
@@ -126,6 +129,8 @@ class _LoginState extends State<Login> {
                                                   Radius.circular(30)),
                                               borderSide: BorderSide.none,
                                             ),
+                                            labelText: 'Password',
+                                            hintText: '********',
                                           ),
                                         ),
                                       ),
@@ -150,7 +155,8 @@ class _LoginState extends State<Login> {
                                   borderRadius: 30,
                                   width: 350,
                                   onPressed: () {
-                                    nextScreen(context, const Home());
+                                    // nextScreen(context, const Home());
+                                    print('woring');
                                   },
                                 ),
                               ),
@@ -175,7 +181,7 @@ class _LoginState extends State<Login> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20),
+                padding: const EdgeInsets.only(top: 20, bottom: 30),
                 child: Container(
                   transform: Matrix4.translationValues(0, 50, 0),
                   child: Row(
@@ -210,16 +216,25 @@ class _LoginState extends State<Login> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10),
+                padding: const EdgeInsets.symmetric(vertical: 30),
                 child: Container(
-                  transform: Matrix4.translationValues(0, 50, 0),
-                  child: const Row(
+                  // transform: Matrix4.translationValues(0, 50, 0),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      MyText(text: "Don't have an account? "),
-                      MyText(
-                        text: 'Sign Up',
-                        color: Colors.red,
+                      const MyText(text: "Don't have an account? "),
+                      GestureDetector(
+                        onTap: () {
+                          nextScreen(context, const Register());
+                          print('heeyyy');
+                        },
+                        child: const SizedBox(
+                          child: MyText(
+                            text: 'Sign Up',
+                            color: Colors.red,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
                       ),
                     ],
                   ),
