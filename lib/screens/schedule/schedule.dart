@@ -3,14 +3,14 @@ import 'package:health_app/constants.dart';
 import 'package:health_app/widgets/my_text.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class Schedule extends StatefulWidget {
+  const Schedule({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Schedule> createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends State<Schedule> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -18,33 +18,22 @@ class _HomeState extends State<Home> {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 6),
-            child: Expanded(
-              child: Container(
-                height: 50,
-                // width: 350,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 1,
-                    color: myFgColor1,
-                  ),
-                  color: myFgColor1,
-                  borderRadius: const BorderRadius.all(Radius.circular(30)),
-                ),
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30)),
-                      borderSide: BorderSide.none,
+              padding: const EdgeInsets.symmetric(vertical: 6),
+              child: SizedBox(
+                height: 110,
+                child: ListView.builder(
+                  itemCount: 4,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => Container(
+                    height: 120,
+                    width: 90,
+                    decoration: const BoxDecoration(
+                      color: myPrimaryColor,
+                      borderRadius: const BorderRadius.all(Radius.circular(15)),
                     ),
-                    labelText: 'Search here',
-                    prefixIcon: Icon(Icons.search),
-                    suffixIcon: Icon(Icons.tune),
                   ),
                 ),
-              ),
-            ),
-          ),
+              )),
           const Row(
             children: [
               MyText(

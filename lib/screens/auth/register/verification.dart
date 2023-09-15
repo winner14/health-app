@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_app/constants.dart';
+import 'package:health_app/screens/home/home.dart';
 import 'package:health_app/widgets/my_text.dart';
 
 class Verification extends StatefulWidget {
@@ -289,19 +290,24 @@ class _VerificationState extends State<Verification> {
                               ),
                             ),
                           ),
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: const BoxDecoration(
-                              color: myFgColor,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(100)),
-                            ),
-                            child: const Center(
-                              child: MyText(
-                                text: 'x',
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500,
+                          GestureDetector(
+                            onTap: () {
+                              nextScreen(context, const Home());
+                            },
+                            child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: const BoxDecoration(
+                                color: myFgColor,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(100)),
+                              ),
+                              child: const Center(
+                                child: MyText(
+                                  text: 'x',
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
                             ),
                           ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:health_app/constants.dart';
 import 'package:health_app/screens/auth/register/register.dart';
+import 'package:health_app/screens/chasis/chasis.dart';
 import 'package:health_app/widgets/my_button.dart';
 import 'package:health_app/widgets/my_text.dart';
 
@@ -104,6 +105,7 @@ class _LoginState extends State<Login> {
                                             ),
                                             labelText: 'Email',
                                             hintText: 'nick@gmail.com',
+                                            prefixIcon: Icon(Icons.email),
                                           ),
                                         ),
                                       ),
@@ -131,6 +133,7 @@ class _LoginState extends State<Login> {
                                             ),
                                             labelText: 'Password',
                                             hintText: '********',
+                                            prefixIcon: Icon(Icons.lock),
                                           ),
                                         ),
                                       ),
@@ -155,8 +158,8 @@ class _LoginState extends State<Login> {
                                   borderRadius: 30,
                                   width: 350,
                                   onPressed: () {
-                                    // nextScreen(context, const Home());
-                                    print('woring');
+                                    nextScreen(context, const Chasis());
+                                    // print('woring');
                                   },
                                 ),
                               ),
