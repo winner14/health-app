@@ -18,49 +18,41 @@ class _HomeState extends State<Schedule> {
       child: Column(
         children: [
           Padding(
-              padding: const EdgeInsets.symmetric(vertical: 6),
-              child: SizedBox(
-                height: 110,
-                child: ListView.builder(
-                  itemCount: 4,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => Container(
-                    height: 120,
-                    width: 90,
-                    decoration: const BoxDecoration(
-                      color: myPrimaryColor,
-                      borderRadius: const BorderRadius.all(Radius.circular(15)),
-                    ),
-                  ),
-                ),
-              )),
-          const Row(
-            children: [
-              MyText(
-                text: 'Services',
-                fontWeight: FontWeight.w500,
-              ),
-            ],
-          ),
-          Padding(
             padding: const EdgeInsets.symmetric(vertical: 6),
             child: SizedBox(
               height: 110,
               child: ListView.builder(
-                itemCount: images.length,
+                itemCount: days.length,
                 scrollDirection: Axis.horizontal,
-                // shrinkWrap: true,
                 itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 6),
                   child: Container(
                     height: 120,
                     width: 90,
                     decoration: BoxDecoration(
-                      color: myPrimaryColor,
+                      color: index == 0 ? myPrimaryColor : myFgColor,
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
-                      image: DecorationImage(
-                        image: AssetImage(images[index]),
-                        fit: BoxFit.cover,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 20, horizontal: 4),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          MyText(
+                            text: days[index].toString(),
+                            fontSize: 20,
+                            fontWeight: FontWeight.w400,
+                            color: index == 0 ? Colors.white : Colors.black,
+                          ),
+                          MyText(
+                            text:
+                                '${weekdays[index][0]}${weekdays[index][1]}${weekdays[index][2]}',
+                            fontSize: 20,
+                            fontWeight: FontWeight.w300,
+                            color: index == 0 ? Colors.white : Colors.black,
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -68,165 +60,95 @@ class _HomeState extends State<Schedule> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 6),
-            child: Container(
-              height: 180,
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                color: myFgColor1,
-                borderRadius: BorderRadius.all(Radius.circular(30)),
-              ),
-              child: const Padding(
-                padding: EdgeInsets.all(15),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          MyText(
-                            text: 'Get the Best\nMedical Service',
-                            fontSize: 22,
-                            fontWeight: FontWeight.w500,
-                          ),
-                          MyText(
-                              text:
-                                  'Transforming lives through healthcare\nJoin us on the jouney')
-                        ],
-                      ),
-                    ),
-                    Image(
-                      image: AssetImage('assets/images/rm.png'),
-                      height: 160,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          const Row(
-            children: [
-              MyText(
-                text: 'Upcoming appointments',
-                fontWeight: FontWeight.w500,
-              ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 6.0),
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 8),
-                  child: Container(
-                    height: 100,
-                    width: 260,
-                    decoration: const BoxDecoration(
-                      color: myPrimaryColor,
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                    ),
+          SizedBox(
+            height: 430,
+            child: ListView.builder(
+              itemCount: 3,
+              itemBuilder: (context, index) => Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 20),
                     child: Row(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.all(6),
-                          child: Container(
-                            width: 80,
-                            decoration: const BoxDecoration(
-                              color: Color(0xFF5CBA91),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(15)),
+                        const MyText(text: '3:20 PM'),
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 4),
+                            child: Container(
+                              height: .3,
+                              color: Colors.black,
                             ),
-                            child: const Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  MyText(
-                                    text: '12',
-                                    color: Colors.white,
-                                    fontSize: 19,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                  MyText(
-                                    text: 'Tue',
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w400,
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(left: 8.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              MyText(
-                                text: '09:30 AM',
-                                color: Colors.white,
-                              ),
-                              MyText(
-                                text: 'David Okyere',
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),
-                              MyText(
-                                text: 'Nurse',
-                                color: Colors.white,
-                              ),
-                            ],
                           ),
                         )
                       ],
                     ),
                   ),
-                ),
-                Expanded(
-                  child: Container(
-                    height: 100,
-                    decoration: const BoxDecoration(
-                      color: Color(0xFF796732),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                  Container(
+                    // height: 90,
+                    decoration: BoxDecoration(
+                      color: index == 0 ? myPrimaryColor : myFgColor,
+                      borderRadius: const BorderRadius.all(Radius.circular(15)),
                     ),
-                    child: const Padding(
-                      padding: EdgeInsets.all(15),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Row(
                         children: [
-                          MyText(
-                            text: '24',
-                            color: Colors.white,
-                            fontSize: 24,
-                            fontWeight: FontWeight.w500,
+                          Container(
+                            height: 80,
+                            width: 80,
+                            decoration: const BoxDecoration(
+                              color: myFgColor,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(100)),
+                            ),
                           ),
-                          MyText(
-                            text: 'Sun',
-                            color: Colors.white,
-                            fontSize: 24,
-                            fontWeight: FontWeight.w300,
-                          )
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                MyText(
+                                  text: '10:30 AM',
+                                  fontWeight: FontWeight.w400,
+                                  color:
+                                      index == 0 ? Colors.white : Colors.black,
+                                ),
+                                MyText(
+                                  text: 'Mrs Anne Pal',
+                                  fontWeight: FontWeight.w500,
+                                  color:
+                                      index == 0 ? Colors.white : Colors.black,
+                                ),
+                                MyText(
+                                  text: 'Nurse',
+                                  color:
+                                      index == 0 ? Colors.white : Colors.black,
+                                ),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          )
+          ),
         ],
       ),
     );
   }
 
-  List images = [
-    'assets/images/top-view.jpg',
-    'assets/images/injection.jpg',
-    'assets/images/medicine_bottle.jpg',
-    'assets/images/medium-shot-doctor.jpg'
+  List days = [10, 11, 12, 13, 14, 15, 16];
+  List weekdays = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday'
   ];
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:health_app/constants.dart';
 import 'package:health_app/screens/home/home.dart';
+import 'package:health_app/screens/report/report.dart';
 import 'package:health_app/screens/schedule/schedule.dart';
 import 'package:health_app/widgets/my_text.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,20 +17,6 @@ class _ChasisState extends State<Chasis> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: mySecondaryColor,
-      //   elevation: 0,
-      //   automaticallyImplyLeading: false,
-      //   leading: const Row(
-      //     children: [
-      //       Icon(
-      //         Icons.notifications_active,
-      //         color: myPrimaryColor,
-      //       ),
-      //       MyText(text: 'Hello!'),
-      //     ],
-      //   ),
-      // ),
       body: SafeArea(
         child: Container(
           height: double.infinity,
@@ -39,119 +26,123 @@ class _ChasisState extends State<Chasis> {
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              children: [
-                selectedIndex == 0
-                    ? Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Row(
-                            children: [
-                              Icon(
-                                Icons.notifications_active,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  selectedIndex == 0
+                      ? Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Row(
+                              children: [
+                                Icon(
+                                  Icons.notifications_active,
+                                  color: myPrimaryColor,
+                                  size: 30,
+                                ),
+                                MyText(
+                                  text: ' Hello!',
+                                  fontSize: 18,
+                                ),
+                              ],
+                            ),
+                            Container(
+                              height: 50,
+                              width: 50,
+                              decoration: const BoxDecoration(
                                 color: myPrimaryColor,
-                                size: 30,
-                              ),
-                              MyText(
-                                text: ' Hello!',
-                                fontSize: 18,
-                              ),
-                            ],
-                          ),
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: const BoxDecoration(
-                              color: myPrimaryColor,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(100)),
-                              image: DecorationImage(
-                                image:
-                                    AssetImage('assets/images/two-doctors.jpg'),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          )
-                        ],
-                      )
-                    : const Row(
-                        children: [
-                          Icon(
-                            Icons.arrow_back_ios,
-                            color: myPrimaryColor,
-                          ),
-                        ],
-                      ),
-                selectedIndex == 0
-                    ? Row(
-                        children: [
-                          Text(
-                            'Ayo Williams',
-                            style: GoogleFonts.roboto(
-                              fontSize: 24,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
-                      )
-                    : selectedIndex == 1
-                        ? Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Schedule',
-                                style: GoogleFonts.roboto(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.w500,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(100)),
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/images/two-doctors.jpg'),
+                                  fit: BoxFit.cover,
                                 ),
                               ),
-                              const Icon(
-                                Icons.calendar_month,
-                                size: 30,
-                              )
-                            ],
-                          )
-                        : selectedIndex == 2
-                            ? Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'Report',
-                                    style: GoogleFonts.roboto(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                  const Icon(
-                                    Icons.text_snippet,
-                                    size: 30,
-                                  )
-                                ],
-                              )
-                            : Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'Notifications',
-                                    style: GoogleFonts.roboto(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                  const Icon(
-                                    Icons.notifications,
-                                    size: 30,
-                                  )
-                                ],
+                            )
+                          ],
+                        )
+                      : const Row(
+                          children: [
+                            Icon(
+                              Icons.arrow_back_ios,
+                              color: myPrimaryColor,
+                            ),
+                          ],
+                        ),
+                  selectedIndex == 0
+                      ? Row(
+                          children: [
+                            Text(
+                              'Ayo Williams',
+                              style: GoogleFonts.roboto(
+                                fontSize: 24,
+                                fontWeight: FontWeight.w500,
                               ),
-                selectedIndex == 0
-                    ? const Home()
-                    : selectedIndex == 1
-                        ? const Schedule()
-                        : const SizedBox(),
-              ],
+                            ),
+                          ],
+                        )
+                      : selectedIndex == 1
+                          ? Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Schedule',
+                                  style: GoogleFonts.roboto(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                const Icon(
+                                  Icons.calendar_month,
+                                  size: 30,
+                                )
+                              ],
+                            )
+                          : selectedIndex == 2
+                              ? Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Report',
+                                      style: GoogleFonts.roboto(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    const Icon(
+                                      Icons.text_snippet,
+                                      size: 30,
+                                    )
+                                  ],
+                                )
+                              : Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Notifications',
+                                      style: GoogleFonts.roboto(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    const Icon(
+                                      Icons.notifications,
+                                      size: 30,
+                                    )
+                                  ],
+                                ),
+                  selectedIndex == 0
+                      ? const Home()
+                      : selectedIndex == 1
+                          ? const Schedule()
+                          : selectedIndex == 2
+                              ? const Report()
+                              : const SizedBox(),
+                ],
+              ),
             ),
           ),
         ),
