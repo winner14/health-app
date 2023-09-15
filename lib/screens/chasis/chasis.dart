@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_app/constants.dart';
+import 'package:health_app/notifications/notifications.dart';
 import 'package:health_app/screens/home/home.dart';
 import 'package:health_app/screens/report/report.dart';
 import 'package:health_app/screens/schedule/schedule.dart';
@@ -140,7 +141,7 @@ class _ChasisState extends State<Chasis> {
                           ? const Schedule()
                           : selectedIndex == 2
                               ? const Report()
-                              : const SizedBox(),
+                              : const Notifications(),
                 ],
               ),
             ),

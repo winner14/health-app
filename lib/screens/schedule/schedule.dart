@@ -27,10 +27,14 @@ class _HomeState extends State<Schedule> {
                 itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 6),
                   child: Container(
-                    height: 120,
+                    height: 110,
                     width: 90,
                     decoration: BoxDecoration(
-                      color: index == 0 ? myPrimaryColor : myFgColor,
+                      color: index == 0
+                          ? myPrimaryColor
+                          : index % 2 == 1
+                              ? myFgColor
+                              : myFgColorAlt,
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                     ),
                     child: Padding(
@@ -63,14 +67,14 @@ class _HomeState extends State<Schedule> {
           SizedBox(
             height: 430,
             child: ListView.builder(
-              itemCount: 3,
+              itemCount: image.length,
               itemBuilder: (context, index) => Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 20),
+                    padding: const EdgeInsets.symmetric(vertical: 10),
                     child: Row(
                       children: [
-                        const MyText(text: '3:20 PM'),
+                        MyText(text: time[index]),
                         Expanded(
                           child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 4),
@@ -86,7 +90,11 @@ class _HomeState extends State<Schedule> {
                   Container(
                     // height: 90,
                     decoration: BoxDecoration(
-                      color: index == 0 ? myPrimaryColor : myFgColor,
+                      color: index == 0
+                          ? myPrimaryColor
+                          : index % 2 == 1
+                              ? myFgColor
+                              : myFgColorAlt,
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                     ),
                     child: Padding(
@@ -96,10 +104,14 @@ class _HomeState extends State<Schedule> {
                           Container(
                             height: 80,
                             width: 80,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               color: myFgColor,
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(100)),
+                                  const BorderRadius.all(Radius.circular(100)),
+                              image: DecorationImage(
+                                image: AssetImage(image[index]),
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                           Padding(
@@ -109,19 +121,19 @@ class _HomeState extends State<Schedule> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 MyText(
-                                  text: '10:30 AM',
+                                  text: appointmentTime[index],
                                   fontWeight: FontWeight.w400,
                                   color:
                                       index == 0 ? Colors.white : Colors.black,
                                 ),
                                 MyText(
-                                  text: 'Mrs Anne Pal',
+                                  text: docName[index],
                                   fontWeight: FontWeight.w500,
                                   color:
                                       index == 0 ? Colors.white : Colors.black,
                                 ),
                                 MyText(
-                                  text: 'Nurse',
+                                  text: title[index],
                                   color:
                                       index == 0 ? Colors.white : Colors.black,
                                 ),
@@ -151,4 +163,13 @@ class _HomeState extends State<Schedule> {
     'Friday',
     'Saturday'
   ];
+  List image = [
+    'assets/images/Ellipse 11.png',
+    'assets/images/Ellipse 12.png',
+    'assets/images/Ellipse 11.png'
+  ];
+  List time = ['10:30 AM', '11:30 AM', '12:30 PM'];
+  List appointmentTime = ['6:30 AM', '7:30 AM', '8:30 AM'];
+  List docName = ['Mrs Anne Pal', 'Dr Dave Okyere', 'Mrs Anne Pal'];
+  List title = ['Nurse', 'Doctor', 'Nurse'];
 }

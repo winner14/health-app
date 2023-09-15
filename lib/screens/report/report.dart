@@ -175,7 +175,7 @@ class _HomeState extends State<Report> {
                                   BorderRadius.all(Radius.circular(15)),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(15),
+                              padding: const EdgeInsets.all(10),
                               child: Column(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -188,7 +188,7 @@ class _HomeState extends State<Report> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Icon(
-                                        Icons.accessibility,
+                                        Icons.fitness_center,
                                         size: 40,
                                         color: Colors.red,
                                       ),
@@ -269,6 +269,11 @@ class _HomeState extends State<Report> {
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(100)),
                                       ),
+                                      child: const Icon(
+                                        Icons.accessibility,
+                                        color: myPrimaryColor,
+                                        size: 40,
+                                      ),
                                     ),
                                     const Padding(
                                       padding: EdgeInsets.symmetric(
@@ -309,15 +314,4 @@ class _HomeState extends State<Report> {
       ),
     );
   }
-
-  List days = [10, 11, 12, 13, 14, 15, 16];
-  List weekdays = [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday'
-  ];
 }

@@ -4,6 +4,8 @@ import 'package:health_app/widgets/my_text.dart';
 const myPrimaryColor = Color(0xFF4DC38C);
 const mySecondaryColor = Color(0xFFFFFFFF);
 const myFgColor = Color(0xFFEBEEEB);
+const myFgColorAlt = Color(0xFFCCECCC);
+const myFgColorAlt1 = Color(0xFFF1E5E9);
 const myFgColor1 = Color(0xFFC8e8EA);
 
 //next screen
