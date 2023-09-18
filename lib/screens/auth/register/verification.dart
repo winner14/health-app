@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:health_app/constants.dart';
-import 'package:health_app/screens/home/home.dart';
+// import 'package:health_app/screens/home/home.dart';3
+import 'package:health_app/widgets/my_button.dart';
 import 'package:health_app/widgets/my_text.dart';
 
 class Verification extends StatefulWidget {
@@ -112,68 +113,65 @@ class _VerificationState extends State<Verification> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          GestureDetector(
-                            onTap: () {
+                          // GestureDetector(
+                          //   onTap: () {
+                          //     addCode(1);
+                          //   },
+                          //   child: Container(
+                          //     height: 50,
+                          //     width: 50,
+                          //     decoration: const BoxDecoration(
+                          //       color: myFgColor,
+                          //       borderRadius:
+                          //           BorderRadius.all(Radius.circular(100)),
+                          //     ),
+                          //     child: const Center(
+                          //       child: MyText(
+                          //         text: '1',
+                          //         fontSize: 25,
+                          //         fontWeight: FontWeight.w500,
+                          //       ),
+                          //     ),
+                          //   ),
+                          // ),
+                          MyButton(
+                            text: '1',
+                            height: 60,
+                            textSize: 20,
+                            textColor: Colors.black,
+                            color: myFgColor,
+                            fontWeight: FontWeight.w500,
+                            borderRadius: 100,
+                            width: 60,
+                            onPressed: () {
                               addCode(1);
                             },
-                            child: Container(
-                              height: 50,
-                              width: 50,
-                              decoration: const BoxDecoration(
-                                color: myFgColor,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(100)),
-                              ),
-                              child: const Center(
-                                child: MyText(
-                                  text: '1',
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ),
                           ),
-                          GestureDetector(
-                            onTap: () {
+                          MyButton(
+                            text: '2',
+                            height: 60,
+                            textSize: 20,
+                            textColor: Colors.black,
+                            color: myFgColor,
+                            fontWeight: FontWeight.w500,
+                            borderRadius: 100,
+                            width: 60,
+                            onPressed: () {
                               addCode(2);
                             },
-                            child: Container(
-                              height: 50,
-                              width: 50,
-                              decoration: const BoxDecoration(
-                                color: myFgColor,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(100)),
-                              ),
-                              child: const Center(
-                                child: MyText(
-                                  text: '2',
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ),
                           ),
-                          GestureDetector(
-                            onTap: () {
+                          MyButton(
+                            text: '3',
+                            height: 60,
+                            textSize: 20,
+                            textColor: Colors.black,
+                            color: myFgColor,
+                            fontWeight: FontWeight.w500,
+                            borderRadius: 100,
+                            width: 60,
+                            onPressed: () {
                               addCode(3);
                             },
-                            child: Container(
-                              height: 50,
-                              width: 50,
-                              decoration: const BoxDecoration(
-                                color: myFgColor,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(100)),
-                              ),
-                              child: const Center(
-                                child: MyText(
-                                  text: '3',
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ),
                           ),
                         ],
                       ),
@@ -183,68 +181,44 @@ class _VerificationState extends State<Verification> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          GestureDetector(
-                            onTap: () {
+                          MyButton(
+                            text: '4',
+                            height: 60,
+                            textSize: 20,
+                            textColor: Colors.black,
+                            color: myFgColor,
+                            fontWeight: FontWeight.w500,
+                            borderRadius: 100,
+                            width: 60,
+                            onPressed: () {
                               addCode(4);
                             },
-                            child: Container(
-                              height: 50,
-                              width: 50,
-                              decoration: const BoxDecoration(
-                                color: myFgColor,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(100)),
-                              ),
-                              child: const Center(
-                                child: MyText(
-                                  text: '4',
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ),
                           ),
-                          GestureDetector(
-                            onTap: () {
+                          MyButton(
+                            text: '5',
+                            height: 60,
+                            textSize: 20,
+                            textColor: Colors.black,
+                            color: myFgColor,
+                            fontWeight: FontWeight.w500,
+                            borderRadius: 100,
+                            width: 60,
+                            onPressed: () {
                               addCode(5);
                             },
-                            child: Container(
-                              height: 50,
-                              width: 50,
-                              decoration: const BoxDecoration(
-                                color: myFgColor,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(100)),
-                              ),
-                              child: const Center(
-                                child: MyText(
-                                  text: '5',
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ),
                           ),
-                          GestureDetector(
-                            onTap: () {
+                          MyButton(
+                            text: '6',
+                            height: 60,
+                            textSize: 20,
+                            textColor: Colors.black,
+                            color: myFgColor,
+                            fontWeight: FontWeight.w500,
+                            borderRadius: 100,
+                            width: 60,
+                            onPressed: () {
                               addCode(6);
                             },
-                            child: Container(
-                              height: 50,
-                              width: 50,
-                              decoration: const BoxDecoration(
-                                color: myFgColor,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(100)),
-                              ),
-                              child: const Center(
-                                child: MyText(
-                                  text: '6',
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ),
                           ),
                         ],
                       ),
@@ -254,68 +228,44 @@ class _VerificationState extends State<Verification> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          GestureDetector(
-                            onTap: () {
+                          MyButton(
+                            text: '7',
+                            height: 60,
+                            textSize: 20,
+                            textColor: Colors.black,
+                            color: myFgColor,
+                            fontWeight: FontWeight.w500,
+                            borderRadius: 100,
+                            width: 60,
+                            onPressed: () {
                               addCode(7);
                             },
-                            child: Container(
-                              height: 50,
-                              width: 50,
-                              decoration: const BoxDecoration(
-                                color: myFgColor,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(100)),
-                              ),
-                              child: const Center(
-                                child: MyText(
-                                  text: '7',
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ),
                           ),
-                          GestureDetector(
-                            onTap: () {
+                          MyButton(
+                            text: '8',
+                            height: 60,
+                            textSize: 20,
+                            textColor: Colors.black,
+                            color: myFgColor,
+                            fontWeight: FontWeight.w500,
+                            borderRadius: 100,
+                            width: 60,
+                            onPressed: () {
                               addCode(8);
                             },
-                            child: Container(
-                              height: 50,
-                              width: 50,
-                              decoration: const BoxDecoration(
-                                color: myFgColor,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(100)),
-                              ),
-                              child: const Center(
-                                child: MyText(
-                                  text: '8',
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ),
                           ),
-                          GestureDetector(
-                            onTap: () {
+                          MyButton(
+                            text: '9',
+                            height: 60,
+                            textSize: 20,
+                            textColor: Colors.black,
+                            color: myFgColor,
+                            fontWeight: FontWeight.w500,
+                            borderRadius: 100,
+                            width: 60,
+                            onPressed: () {
                               addCode(9);
                             },
-                            child: Container(
-                              height: 50,
-                              width: 50,
-                              decoration: const BoxDecoration(
-                                color: myFgColor,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(100)),
-                              ),
-                              child: const Center(
-                                child: MyText(
-                                  text: '9',
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ),
                           ),
                         ],
                       ),
@@ -329,30 +279,29 @@ class _VerificationState extends State<Verification> {
                             height: 50,
                             width: 50,
                           ),
-                          GestureDetector(
-                            onTap: () {
+                          MyButton(
+                            text: '0',
+                            height: 60,
+                            textSize: 19,
+                            textColor: Colors.black,
+                            color: myFgColor,
+                            fontWeight: FontWeight.w500,
+                            borderRadius: 100,
+                            width: 60,
+                            onPressed: () {
                               addCode(0);
                             },
-                            child: Container(
-                              height: 50,
-                              width: 50,
-                              decoration: const BoxDecoration(
-                                color: myFgColor,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(100)),
-                              ),
-                              child: const Center(
-                                child: MyText(
-                                  text: '0',
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ),
                           ),
-                          GestureDetector(
-                            onTap: () {
-                              // nextScreen(context, const Home());
+                          MyButton(
+                            text: 'x',
+                            height: 60,
+                            textSize: 20,
+                            textColor: Colors.black,
+                            color: myFgColor,
+                            fontWeight: FontWeight.w500,
+                            borderRadius: 100,
+                            width: 60,
+                            onPressed: () {
                               for (var i = 4; i > 0; i--) {
                                 if (verificationCode[i - 1] != null) {
                                   setState(() {
@@ -362,22 +311,6 @@ class _VerificationState extends State<Verification> {
                                 }
                               }
                             },
-                            child: Container(
-                              height: 50,
-                              width: 50,
-                              decoration: const BoxDecoration(
-                                color: myFgColor,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(100)),
-                              ),
-                              child: const Center(
-                                child: MyText(
-                                  text: 'x',
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ),
                           ),
                         ],
                       ),
