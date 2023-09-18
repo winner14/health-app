@@ -11,6 +11,8 @@ class Verification extends StatefulWidget {
 }
 
 class _VerificationState extends State<Verification> {
+  List verificationCode = [null, null, null, null];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,8 +58,8 @@ class _VerificationState extends State<Verification> {
               width: 320,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: 4,
-                itemBuilder: (index, context) => Padding(
+                itemCount: verificationCode.length,
+                itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: Container(
                     height: 50,
@@ -69,6 +71,14 @@ class _VerificationState extends State<Verification> {
                       ),
                       borderRadius: const BorderRadius.all(Radius.circular(6)),
                     ),
+                    child: verificationCode[index] != null
+                        ? Center(
+                            child: MyText(
+                              text: verificationCode[index].toString(),
+                              fontSize: 20,
+                            ),
+                          )
+                        : const SizedBox(),
                   ),
                 ),
               ),
@@ -102,107 +112,66 @@ class _VerificationState extends State<Verification> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: const BoxDecoration(
-                              color: myFgColor,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(100)),
-                            ),
-                            child: const Center(
-                              child: MyText(
-                                text: '1',
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500,
+                          GestureDetector(
+                            onTap: () {
+                              addCode(1);
+                            },
+                            child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: const BoxDecoration(
+                                color: myFgColor,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(100)),
+                              ),
+                              child: const Center(
+                                child: MyText(
+                                  text: '1',
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
                             ),
                           ),
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: const BoxDecoration(
-                              color: myFgColor,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(100)),
-                            ),
-                            child: const Center(
-                              child: MyText(
-                                text: '2',
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500,
+                          GestureDetector(
+                            onTap: () {
+                              addCode(2);
+                            },
+                            child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: const BoxDecoration(
+                                color: myFgColor,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(100)),
+                              ),
+                              child: const Center(
+                                child: MyText(
+                                  text: '2',
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
                             ),
                           ),
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: const BoxDecoration(
-                              color: myFgColor,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(100)),
-                            ),
-                            child: const Center(
-                              child: MyText(
-                                text: '3',
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500,
+                          GestureDetector(
+                            onTap: () {
+                              addCode(3);
+                            },
+                            child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: const BoxDecoration(
+                                color: myFgColor,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(100)),
                               ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: const BoxDecoration(
-                              color: myFgColor,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(100)),
-                            ),
-                            child: const Center(
-                              child: MyText(
-                                text: '4',
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: const BoxDecoration(
-                              color: myFgColor,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(100)),
-                            ),
-                            child: const Center(
-                              child: MyText(
-                                text: '5',
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: const BoxDecoration(
-                              color: myFgColor,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(100)),
-                            ),
-                            child: const Center(
-                              child: MyText(
-                                text: '6',
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500,
+                              child: const Center(
+                                child: MyText(
+                                  text: '3',
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
                             ),
                           ),
@@ -214,51 +183,137 @@ class _VerificationState extends State<Verification> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: const BoxDecoration(
-                              color: myFgColor,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(100)),
-                            ),
-                            child: const Center(
-                              child: MyText(
-                                text: '7',
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500,
+                          GestureDetector(
+                            onTap: () {
+                              addCode(4);
+                            },
+                            child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: const BoxDecoration(
+                                color: myFgColor,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(100)),
+                              ),
+                              child: const Center(
+                                child: MyText(
+                                  text: '4',
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
                             ),
                           ),
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: const BoxDecoration(
-                              color: myFgColor,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(100)),
-                            ),
-                            child: const Center(
-                              child: MyText(
-                                text: '8',
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500,
+                          GestureDetector(
+                            onTap: () {
+                              addCode(5);
+                            },
+                            child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: const BoxDecoration(
+                                color: myFgColor,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(100)),
+                              ),
+                              child: const Center(
+                                child: MyText(
+                                  text: '5',
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
                             ),
                           ),
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: const BoxDecoration(
-                              color: myFgColor,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(100)),
+                          GestureDetector(
+                            onTap: () {
+                              addCode(6);
+                            },
+                            child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: const BoxDecoration(
+                                color: myFgColor,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(100)),
+                              ),
+                              child: const Center(
+                                child: MyText(
+                                  text: '6',
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
                             ),
-                            child: const Center(
-                              child: MyText(
-                                text: '9',
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              addCode(7);
+                            },
+                            child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: const BoxDecoration(
+                                color: myFgColor,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(100)),
+                              ),
+                              child: const Center(
+                                child: MyText(
+                                  text: '7',
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              addCode(8);
+                            },
+                            child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: const BoxDecoration(
+                                color: myFgColor,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(100)),
+                              ),
+                              child: const Center(
+                                child: MyText(
+                                  text: '8',
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              addCode(9);
+                            },
+                            child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: const BoxDecoration(
+                                color: myFgColor,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(100)),
+                              ),
+                              child: const Center(
+                                child: MyText(
+                                  text: '9',
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
                             ),
                           ),
@@ -274,25 +329,38 @@ class _VerificationState extends State<Verification> {
                             height: 50,
                             width: 50,
                           ),
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: const BoxDecoration(
-                              color: myFgColor,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(100)),
-                            ),
-                            child: const Center(
-                              child: MyText(
-                                text: '0',
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500,
+                          GestureDetector(
+                            onTap: () {
+                              addCode(0);
+                            },
+                            child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: const BoxDecoration(
+                                color: myFgColor,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(100)),
+                              ),
+                              child: const Center(
+                                child: MyText(
+                                  text: '0',
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
                             ),
                           ),
                           GestureDetector(
                             onTap: () {
-                              nextScreen(context, const Home());
+                              // nextScreen(context, const Home());
+                              for (var i = 4; i > 0; i--) {
+                                if (verificationCode[i - 1] != null) {
+                                  setState(() {
+                                    verificationCode[i - 1] = null;
+                                  });
+                                  break;
+                                }
+                              }
                             },
                             child: Container(
                               height: 50,
@@ -322,5 +390,16 @@ class _VerificationState extends State<Verification> {
         ),
       ),
     );
+  }
+
+  void addCode(int code) {
+    for (int i = 0; i < 4; i++) {
+      if (verificationCode[i] == null) {
+        setState(() {
+          verificationCode[i] = code;
+        });
+        break;
+      }
+    }
   }
 }

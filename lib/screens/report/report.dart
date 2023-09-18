@@ -175,7 +175,7 @@ class _HomeState extends State<Report> {
                                   BorderRadius.all(Radius.circular(15)),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(15),
                               child: Column(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,

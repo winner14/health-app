@@ -5,6 +5,7 @@ import 'package:health_app/screens/home/home.dart';
 import 'package:health_app/screens/report/report.dart';
 import 'package:health_app/screens/schedule/schedule.dart';
 import 'package:health_app/widgets/my_text.dart';
+// ignore: depend_on_referenced_packages
 import 'package:google_fonts/google_fonts.dart';
 
 class Chasis extends StatefulWidget {

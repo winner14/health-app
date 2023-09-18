@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_app/constants.dart';
 import 'package:health_app/widgets/my_text.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Schedule extends StatefulWidget {
   const Schedule({super.key});
