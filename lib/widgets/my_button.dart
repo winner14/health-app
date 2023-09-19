@@ -6,6 +6,7 @@ import 'my_text.dart';
 class MyButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
+  final VoidCallback? onLongPress;
   final double height;
   final double width;
   final Color color;
@@ -24,6 +25,7 @@ class MyButton extends StatelessWidget {
     Key? key,
     required this.text,
     required this.onPressed,
+    this.onLongPress,
     this.height = 60,
     this.width = 200,
     this.factory,
@@ -49,6 +51,7 @@ class MyButton extends StatelessWidget {
       height: height,
       child: ElevatedButton(
         onPressed: onPressed,
+        onLongPress: onLongPress,
         style: ButtonStyle(
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(

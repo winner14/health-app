@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_app/constants.dart';
+import 'package:health_app/screens/chasis/chasis.dart';
 // import 'package:health_app/screens/home/home.dart';3
 import 'package:health_app/widgets/my_button.dart';
 import 'package:health_app/widgets/my_text.dart';
@@ -13,6 +14,7 @@ class Verification extends StatefulWidget {
 
 class _VerificationState extends State<Verification> {
   List verificationCode = [null, null, null, null];
+  var testCode = [1, 2, 3, 4];
 
   @override
   Widget build(BuildContext context) {
@@ -113,27 +115,6 @@ class _VerificationState extends State<Verification> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          // GestureDetector(
-                          //   onTap: () {
-                          //     addCode(1);
-                          //   },
-                          //   child: Container(
-                          //     height: 50,
-                          //     width: 50,
-                          //     decoration: const BoxDecoration(
-                          //       color: myFgColor,
-                          //       borderRadius:
-                          //           BorderRadius.all(Radius.circular(100)),
-                          //     ),
-                          //     child: const Center(
-                          //       child: MyText(
-                          //         text: '1',
-                          //         fontSize: 25,
-                          //         fontWeight: FontWeight.w500,
-                          //       ),
-                          //     ),
-                          //   ),
-                          // ),
                           MyButton(
                             text: '1',
                             height: 60,
@@ -145,6 +126,7 @@ class _VerificationState extends State<Verification> {
                             width: 60,
                             onPressed: () {
                               addCode(1);
+                              onLastCodeIndex();
                             },
                           ),
                           MyButton(
@@ -158,6 +140,7 @@ class _VerificationState extends State<Verification> {
                             width: 60,
                             onPressed: () {
                               addCode(2);
+                              onLastCodeIndex();
                             },
                           ),
                           MyButton(
@@ -171,6 +154,7 @@ class _VerificationState extends State<Verification> {
                             width: 60,
                             onPressed: () {
                               addCode(3);
+                              onLastCodeIndex();
                             },
                           ),
                         ],
@@ -192,6 +176,7 @@ class _VerificationState extends State<Verification> {
                             width: 60,
                             onPressed: () {
                               addCode(4);
+                              onLastCodeIndex();
                             },
                           ),
                           MyButton(
@@ -205,6 +190,7 @@ class _VerificationState extends State<Verification> {
                             width: 60,
                             onPressed: () {
                               addCode(5);
+                              onLastCodeIndex();
                             },
                           ),
                           MyButton(
@@ -218,6 +204,7 @@ class _VerificationState extends State<Verification> {
                             width: 60,
                             onPressed: () {
                               addCode(6);
+                              onLastCodeIndex();
                             },
                           ),
                         ],
@@ -239,6 +226,7 @@ class _VerificationState extends State<Verification> {
                             width: 60,
                             onPressed: () {
                               addCode(7);
+                              onLastCodeIndex();
                             },
                           ),
                           MyButton(
@@ -252,6 +240,7 @@ class _VerificationState extends State<Verification> {
                             width: 60,
                             onPressed: () {
                               addCode(8);
+                              onLastCodeIndex();
                             },
                           ),
                           MyButton(
@@ -265,6 +254,7 @@ class _VerificationState extends State<Verification> {
                             width: 60,
                             onPressed: () {
                               addCode(9);
+                              onLastCodeIndex();
                             },
                           ),
                         ],
@@ -290,6 +280,7 @@ class _VerificationState extends State<Verification> {
                             width: 60,
                             onPressed: () {
                               addCode(0);
+                              onLastCodeIndex();
                             },
                           ),
                           MyButton(
@@ -309,6 +300,13 @@ class _VerificationState extends State<Verification> {
                                   });
                                   break;
                                 }
+                              }
+                            },
+                            onLongPress: () {
+                              for (int i = 0; i < 4; i++) {
+                                setState(() {
+                                  verificationCode[i] = null;
+                                });
                               }
                             },
                           ),
@@ -332,6 +330,33 @@ class _VerificationState extends State<Verification> {
           verificationCode[i] = code;
         });
         break;
+      }
+    }
+  }
+
+  void onLastCodeIndex() {
+    if (verificationCode[3] != null) {
+      bool verified = true;
+      for (var i = 0; i < 4; i++) {
+        if (verificationCode[i] != testCode[i]) {
+          verified = false;
+          break;
+        }
+      }
+
+      if (verified == true) {
+        nextScreen(context, const Chasis());
+      } else {
+        showSnackbarWithoutAction(
+          context,
+          myPrimaryColor,
+          "Invalid code. Try again or press 'Resend' to get new code",
+        );
+        for (int i = 0; i < 4; i++) {
+          setState(() {
+            verificationCode[i] = null;
+          });
+        }
       }
     }
   }
